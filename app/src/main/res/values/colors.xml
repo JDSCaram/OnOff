@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#d4d4d6</color>
+    <color name="colorPrimaryDark">#b4b4b4</color>
+    <color name="colorAccent">#f5dca1</color>
 
-    <color name="black_overlay">#66000000</color>
+    <color name="item_stages_stroke">#fdfdfe</color>
+    <color name="item_stages_text">#f4f3f3</color>
+    <color name="item_stages">#fdfdfe</color>
+    <color name="item_stages_bg">#29fdfdfe</color>
+    <color name="item_stages_disable">#a1a1a0</color>
+    <color name="item_stages_actual">#177029</color>
+
+    <color name="text_color">#fdfdfe</color>
+    <color name="text_color_accent">#f49431</color>
+
+
+    <color name="screen_bg">#30abe4</color>
+    <color name="stages_bg">#585858</color>
+    <color name="progress_bar_bg">#f49431</color>
+    <color name="ads_bg">#333333</color>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="colorSecundary">#1a1a1a</color>
 </resources>

@@ -1,17 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "30.0.1"
+    compileSdkVersion AppConfig.compileSdk
 
     defaultConfig {
-        applicationId "com.jdscaram.onoff"
-        minSdkVersion 22
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        applicationId AppConfig.applicationId
+        minSdkVersion AppConfig.minSdk
+        targetSdkVersion AppConfig.targetSdk
+        versionCode AppConfig.versionCode
+        versionName AppConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -22,16 +22,63 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/AL2.0'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        freeCompilerArgs = ["-Xallow-result-return-type"]
+    }
+
+    dataBinding.enabled = true
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
+//    implementation project(Modules.core)
+
+    implementation Libs.stdlib
+    implementation Libs.ktx
+    implementation Libs.supportAppCompat
+    implementation Libs.designSupport
+    implementation Libs.fragmentJava
+    implementation Libs.fragmentKotlin
+    implementation Libs.constraintLayout
+    implementation Libs.viewModel
+    implementation Libs.liveData
+    implementation Libs.lifeCycleExtension
+    implementation Libs.navigation
+    implementation Libs.navigationUi
+
+
+    implementation Libs.kotlinJunit
+    testImplementation Libs.jUnit
+    androidTestImplementation Libs.extInstrumentation
+    androidTestImplementation Libs.espresso
+
+    testImplementation Libs.mockkCore
+    testImplementation Libs.mockkAndroid
+    testImplementation Libs.coreTesting
+    testImplementation Libs.coroutinesTest
+    testImplementation Libs.coroutines
+}
+
+repositories {
+    maven { url "https://jitpack.io" }
 }
