@@ -1,0 +1,9 @@
+apply from: "$rootDir/config-feature-module.gradle"
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation Libs.fragmentKotlin
+    implementation Libs.constraintLayout
+    testImplementation Libs.jUnit
+}

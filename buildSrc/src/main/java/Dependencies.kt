@@ -2,14 +2,14 @@ object AppConfig {
     const val compileSdk = 29
     const val minSdk = 21
     const val targetSdk = 29
-    const val versionCode = 1
-    const val versionName = "1.0"
+    const val versionCode = 4
+    const val versionName = "1.4"
     const val applicationId = "com.bodeslab.onoff"
 }
 
 object Versions {
-    const val kotlin = "1.4.10"
-    const val gradle = "4.0.2"
+    const val kotlin = "1.4.30"
+    const val gradle = "4.1.0"
     const val supportDesign = "28.0.0"
     const val constraintLayout = "1.1.3"
     const val ktx = "1.2.0"
@@ -26,10 +26,10 @@ object Versions {
     const val lifecycle = "2.2.0"
     const val lifecycleExtension = "2.0.0"
     const val lifecycleTesting = "2.1.0"
-    const val coroutines = "1.3.6"
-    const val navigation = "2.2.0"
-    const val lottieVersion = "3.4.1"
-    const val mockk = "1.10.0"
+    const val coroutines = "1.4.2"
+    const val navigation = "2.3.0"
+    const val lottieVersion = "3.5.0"
+    const val mockk = "1.10.6"
 }
 
 object Libs {
@@ -78,7 +78,7 @@ object Libs {
 }
 
 object Modules {
-    const val menu = ":menu"
-    const val settings = ":settings"
-    const val core = ":core"
+    const val menu = ":feature:menu"
+    const val home = ":feature:home"
+    const val settings = ":feature:settings"
 }

@@ -1,0 +1,16 @@
+apply from: "$rootDir/config-feature-module.gradle"
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation Libs.stdlib
+    implementation Libs.navigation
+    implementation Libs.navigationUi
+    implementation Libs.fragmentKotlin
+    implementation Libs.constraintLayout
+    implementation Libs.kotlinJunit
+    implementation Libs.mockkAndroid
+    implementation Libs.mockkCore
+
+    testImplementation Libs.jUnit
+}

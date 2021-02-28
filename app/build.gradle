@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-parcelize'
 
 android {
     compileSdkVersion AppConfig.compileSdk
@@ -45,13 +45,23 @@ android {
         freeCompilerArgs = ["-Xallow-result-return-type"]
     }
 
-    dataBinding.enabled = true
+    buildFeatures {
+        dataBinding = true
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs += 'src/main/kotlin'
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-//    implementation project(Modules.core)
+    implementation project(path: Modules.home, configuration: 'default')
+    implementation project(path: Modules.settings, configuration: 'default')
+    implementation project(path: Modules.menu, configuration: 'default')
 
     implementation Libs.stdlib
     implementation Libs.ktx
