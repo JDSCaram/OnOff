@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion AppConfig.compileSdk
@@ -51,12 +51,6 @@ android {
             testLogging {
                 exceptionFormat = 'full'
             }
-        }
-    }
-
-    variantFilter { variant ->
-        if (variant.name == 'debug') {
-            variant.ignore = true
         }
     }
 }

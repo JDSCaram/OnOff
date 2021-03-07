@@ -17,7 +17,7 @@ object Versions {
     const val appcompat = "1.1.0"
     const val support = "1.2.0-alpha01"
     const val fragment = "1.2.4"
-
+    const val koin = "3.0.1-beta-1"
 
     const val junit = "4.12"
     const val extInstrumentation = "1.1.1"
@@ -40,6 +40,8 @@ object Libs {
     const val supportAppCompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val designSupport = "com.google.android.material:material:${Versions.support}"
     const val supportDesign = "com.android.support:design:${Versions.supportDesign}"
+    const val koin = "io.insert-koin:koin-android:${Versions.koin}"
+    const val koinExt = "io.insert-koin:koin-android-ext:${Versions.koin}"
 
     // Java language implementation
     const val fragmentJava = "androidx.fragment:fragment:${Versions.fragment}"

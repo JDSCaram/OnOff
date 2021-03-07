@@ -1,5 +1,5 @@
 rootProject.name = "OnOff"
-include ':app',
-        ':feature:home',
-        ':feature:settings',
-        ':feature:menu'
+include ':app'
+include ':feature:home'
+include ':feature:settings'
+include ':feature:menu'
