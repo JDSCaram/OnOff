@@ -1,0 +1,30 @@
+digraph {
+  graph [label="OnOff\n ",labelloc=t,fontsize=30,ranksep=1.4];
+  node [style=filled, fillcolor="#bbbbbb"];
+  rankdir=TB;
+
+  # Projects
+
+  ":app" [fillcolor="#baffc9"];
+  ":core" [fillcolor="#ffb3ba"];
+  ":feature:home" [fillcolor="#baffc9"];
+  ":feature:menu" [fillcolor="#baffc9"];
+  ":feature:settings" [fillcolor="#baffc9"];
+
+  {rank = same;}
+
+  # Dependencies
+
+  ":app" -> ":app"
+  ":app" -> ":feature:home" [style=dotted]
+  ":app" -> ":feature:settings" [style=dotted]
+  ":app" -> ":feature:menu" [style=dotted]
+  ":app" -> ":core" [style=dotted]
+  ":feature:home" -> ":feature:home"
+  ":feature:home" -> ":feature:settings" [style=dotted]
+  ":feature:home" -> ":core" [style=dotted]
+  ":feature:menu" -> ":feature:menu"
+  ":feature:menu" -> ":core" [style=dotted]
+  ":feature:settings" -> ":feature:settings"
+  ":feature:settings" -> ":core" [style=dotted]
+}

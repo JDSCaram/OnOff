@@ -1,7 +1,14 @@
 apply from: "$rootDir/config-feature-module.gradle"
 
 dependencies {
+    implementation project(Modules.core)
+
     implementation Libs.fragmentKotlin
     implementation Libs.constraintLayout
+    implementation Libs.kotlinSerialization
+
+    implementation Libs.hilt
+    kapt Libs.hiltCompiler
+
     testImplementation Libs.jUnit
 }

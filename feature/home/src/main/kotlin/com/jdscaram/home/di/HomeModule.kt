@@ -1,11 +1,11 @@
 package com.jdscaram.home.di
 
-import com.jdscaram.home.presentation.HomeViewModel
-import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.dsl.module
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
-val homeViewModelModule = module {
-    viewModel { HomeViewModel() }
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class HomeModule {
+
 }
-
-val homeKoinModules = listOf(homeViewModelModule)

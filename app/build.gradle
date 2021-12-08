@@ -1,7 +1,11 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'kotlin-parcelize'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'kotlinx-serialization'
+    id 'dagger.hilt.android.plugin'
+}
 
 android {
     compileSdkVersion AppConfig.compileSdk
@@ -60,12 +64,11 @@ dependencies {
     implementation project(Modules.home)
     implementation project(Modules.settings)
     implementation project(Modules.menu)
+    implementation project(Modules.core)
 
-    implementation Libs.stdlib
     implementation Libs.ktx
     implementation Libs.supportAppCompat
     implementation Libs.designSupport
-    implementation Libs.fragmentJava
     implementation Libs.fragmentKotlin
     implementation Libs.constraintLayout
     implementation Libs.viewModel
@@ -73,8 +76,12 @@ dependencies {
     implementation Libs.lifeCycleExtension
     implementation Libs.navigation
     implementation Libs.navigationUi
-    implementation Libs.koin
-    implementation Libs.koinExt
+    implementation Libs.hilt
+    implementation Libs.hiltCommon
+    implementation Libs.hiltNavigatorFragment
+    implementation Libs.hiltViewModelLifeCycle
+    kapt Libs.hiltCompiler
+    kapt Libs.hiltCommonCompiler
 
     implementation Libs.kotlinJunit
     testImplementation Libs.jUnit
@@ -86,8 +93,4 @@ dependencies {
     testImplementation Libs.coreTesting
     testImplementation Libs.coroutinesTest
     testImplementation Libs.coroutines
-}
-
-repositories {
-    maven { url "https://jitpack.io" }
 }

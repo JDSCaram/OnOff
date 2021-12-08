@@ -1,15 +1,15 @@
 object AppConfig {
-    const val compileSdk = 29
+    const val compileSdk = 30
     const val minSdk = 21
-    const val targetSdk = 29
+    const val targetSdk = 30
     const val versionCode = 4
     const val versionName = "1.4"
     const val applicationId = "com.bodeslab.onoff"
 }
 
 object Versions {
-    const val kotlin = "1.4.30"
-    const val gradle = "4.1.0"
+    const val kotlin = "1.5.0"
+    const val gradle = "7.0.3"
     const val supportDesign = "28.0.0"
     const val constraintLayout = "1.1.3"
     const val ktx = "1.2.0"
@@ -17,7 +17,9 @@ object Versions {
     const val appcompat = "1.1.0"
     const val support = "1.2.0-alpha01"
     const val fragment = "1.2.4"
-    const val koin = "3.0.1-beta-1"
+    const val hilt = "2.40.2"
+    const val hiltAndroidX = "1.0.0-alpha03"
+    const val javax = "1"
 
     const val junit = "4.12"
     const val extInstrumentation = "1.1.1"
@@ -30,23 +32,24 @@ object Versions {
     const val navigation = "2.3.0"
     const val lottieVersion = "3.5.0"
     const val mockk = "1.10.6"
+    const val kotlinSerialization = "1.1.0"
 }
 
 object Libs {
-    const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}"
-
     const val ktx = "androidx.core:core-ktx:${Versions.ktx}"
     const val recyclerview = "androidx.recyclerview:recyclerview:${Versions.recyclerView}"
     const val supportAppCompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
     const val designSupport = "com.google.android.material:material:${Versions.support}"
     const val supportDesign = "com.android.support:design:${Versions.supportDesign}"
-    const val koin = "io.insert-koin:koin-android:${Versions.koin}"
-    const val koinExt = "io.insert-koin:koin-android-ext:${Versions.koin}"
+    const val hilt = "com.google.dagger:hilt-android:${Versions.hilt}"
+    const val hiltCore = "com.google.dagger:hilt-core:${Versions.hilt}"
+    const val hiltCommon = "androidx.hilt:hilt-common:${Versions.hiltAndroidX}"
+    const val hiltCommonCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltAndroidX}"
+    const val hiltNavigatorFragment = "androidx.hilt:hilt-navigation-fragment:${Versions.hiltAndroidX}"
+    const val hiltViewModelLifeCycle = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltAndroidX}"
+    const val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.hilt}"
+    const val javax = "javax.inject:javax.inject:${Versions.javax}"
 
-    // Java language implementation
-    const val fragmentJava = "androidx.fragment:fragment:${Versions.fragment}"
-
-    // Kotlin
     const val fragmentKotlin = "androidx.fragment:fragment-ktx:${Versions.fragment}"
 
     const val constraintLayout =
@@ -77,10 +80,13 @@ object Libs {
     const val lottie = "com.airbnb.android:lottie:${Versions.lottieVersion}"
     const val mockkCore = "io.mockk:mockk:${Versions.mockk}"
     const val mockkAndroid = "io.mockk:mockk-android:${Versions.mockk}"
+
+    const val kotlinSerialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.kotlinSerialization}"
 }
 
 object Modules {
     const val menu = ":feature:menu"
     const val home = ":feature:home"
     const val settings = ":feature:settings"
+    const val core = ":core"
 }

@@ -2,8 +2,8 @@ apply from: "$rootDir/config-feature-module.gradle"
 
 dependencies {
     implementation project(Modules.settings)
+    implementation project(Modules.core)
 
-    implementation Libs.stdlib
     implementation Libs.navigation
     implementation Libs.navigationUi
     implementation Libs.fragmentKotlin
@@ -11,7 +11,7 @@ dependencies {
     implementation Libs.kotlinJunit
     implementation Libs.mockkAndroid
     implementation Libs.mockkCore
-    implementation Libs.koin
+    implementation Libs.hiltCore
 
     testImplementation Libs.jUnit
 }

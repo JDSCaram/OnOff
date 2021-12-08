@@ -1,0 +1,20 @@
+plugins {
+    id 'kotlin'
+    id "kotlinx-serialization"
+    id 'kotlin-kapt'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+compileKotlin {
+    kotlinOptions.freeCompilerArgs = ["-Xallow-result-return-type"]
+}
+
+dependencies {
+    implementation Libs.hiltCore
+    implementation Libs.kotlinSerialization
+    implementation Libs.coroutines
+}
